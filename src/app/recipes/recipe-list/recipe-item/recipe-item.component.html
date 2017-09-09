@@ -1,0 +1,19 @@
+<p class="bg-info info">recipe-item.component<p>
+<a 
+    href="#" 
+    class="list-group-item clearfix"
+    (click)="onClickRecipeItem(propertyRecipeItem)"
+>
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{propertyRecipeItem.name}}</h4>
+        <p class="list-group-item-text">{{propertyRecipeItem.description}}</p>
+    </div>
+    <span class="pull-right">
+        <img
+            src="{{propertyRecipeItem.imagePath}}"
+            alt="{{propertyRecipeItem.name}}" 
+            class="img-responsive" 
+            style="max-height: 50px;"
+        >
+    </span>    
+</a>
