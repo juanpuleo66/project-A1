@@ -1,0 +1,19 @@
+<div class="container">
+    <p class="bg-info info">{{titulo}}<p>
+    <h2>{{titulo}}</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <label for="emailContact">Email Contact</label>
+            <input 
+                class="form-control"
+                type="text"
+                name="emailContact"
+                [(ngModel)]="emailContact"
+            >
+            <button (click)="onClickButton()" class="btn btn-primary">Send Email</button>
+        </div>
+    </div>
+</div>
+<app-main-email></app-main-email>
+          

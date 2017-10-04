@@ -1,0 +1,26 @@
+.info {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-left: 1px solid lightskyblue;
+    border-right: 1px solid lightskyblue;
+    border-top: 1px solid lightskyblue;
+}
+
+body {
+    /* background: rgba(7, 74, 158, 0.10) !important; */
+}
+
+.navigation.col-lg-12 {
+    margin-top: 10px;
+}
+
+.jumbotron {
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px #ccc;
+}
+
+.navbar-nav .active {
+    border-bottom: 3px solid orange;
+}

@@ -1,15 +1,64 @@
-<p class="bg-info info">recipes.component<p>
-  
-<app-header (eventHeader)="onClickHeader($event)"></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-        <app-recipes 
-          *ngIf="variableHeader==='recipes'"
-        ></app-recipes>
-        <app-shopping-list
-          *ngIf="variableHeader==='shopping-list'"
-        ></app-shopping-list>
+<div class="navigation col-lg-12">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar_header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" [routerLink]="['/home']" [routerLinkActive]="['active']">{{titulo}}</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a [routerLink]="['/home']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-home"></span>
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/animals']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-star"></span>
+                Animales
+              </a>
+            </li>                
+            <li>
+              <a [routerLink]="['/keepers']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-user"></span>
+                Cuidadores
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/tienda']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-gift"></span>
+                Tienda
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/contact']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-comment"></span>
+                Contacto
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/jquery']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-usd"></span>
+                jQuery
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/editorsimpletiny']" [routerLinkActive]="['active']">
+                <span class="glyphicon glyphicon-edit"></span>
+                Editort Simple Tiny
+              </a>
+            </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
+</div>
+<div class="col-lg-11">
+    <router-outlet></router-outlet>    
 </div>

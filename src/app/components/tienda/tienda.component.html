@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{titulo}}</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Datos de la Tienda</label>
+                    <ul>
+                        <li>Camiseta roja</li>
+                        <li>Pantalone azule</li>
+                        <li>Franela verde</li>
+                    </ul>        
+                </div>
+                <div *ngIf="miParque" class="col-md-4">
+                    <label>Datos del Hijo</label>
+                    <ul>
+                        <li>{{miParque.nombre}}</li>
+                        <li>{{miParque.metros}}</li>
+                        <li>{{miParque.vegetacion}}</li>
+                        <li>{{miParque.abierto}}</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="nombreParque">Nombre Parque</label>
+                        <input 
+                            class="form-control" 
+                            type="text" 
+                            name="nombreParque"
+                            placeholder="nombre parque"
+                            [(ngModel)]="nombreDelParque"
+                            (keyup)="mostrarNombre()"
+                        >        
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="metros">Metros</label>
+                        <input 
+                            class="form-control"    
+                            type="number"
+                            placeholder="metros"
+                            [(ngModel)]="metrosCuadrados"
+                        >
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="vegetacion">Tipo de Vegetacion</label>
+                        <input 
+                            class="form-control"
+                            type="text" 
+                            name="vegetacion"
+                            placeholder="vegetacion"
+                            [(ngModel)]="tipoDeVegetacion"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<span *ngIf="nombreDelParque">
+    <app-parques
+        [nombre]="nombreDelParque"
+        [metrosCuadrados]="metrosCuadrados"
+        [vegetacion]="tipoDeVegetacion"
+        (eventoParques)="datosParques($event)"
+    ></app-parques>
+</span>
